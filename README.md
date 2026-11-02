@@ -1,6 +1,6 @@
 # 🛡️ B2B Cyber CVE, Sanctions & KYB Compliance Gate (`GitHub Action`)
 
-[![CI Self-Test](https://github.com/jesleytassili-glitch/b2b-compliance-security-action/actions/workflows/ci-self-test.yml/badge.svg)](https://github.com/jesleytassili-glitch/b2b-compliance-security-action/actions/workflows/ci-self-test.yml)
+[![Marketplace Release](https://img.shields.io/github/v/release/jesleytassili-glitch/b2b-compliance-security-action?color=brightgreen&label=Marketplace%20Release)](https://github.com/jesleytassili-glitch/b2b-compliance-security-action/releases/tag/v1.0.0)
 [![Model Context Protocol Registry](https://img.shields.io/badge/Official_MCP_Registry-io.github.jesleytassili-glitch-6366F1)](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.jesleytassili-glitch)
 [![RapidAPI Hub](https://img.shields.io/badge/RapidAPI-@b2bquantapis-0055FF)](https://rapidapi.com/user/b2bquantapis)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
