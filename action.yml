@@ -1,0 +1,76 @@
+name: 'B2B Cyber CVE, Sanctions & KYB Compliance Gate'
+description: 'Automated CI/CD gate for CISA KEV ransomware CVEs, SSL/DNS attack surface, OFAC sanctions, GLEIF LEI, EU VAT & B2G tenders.'
+author: 'jesleytassili-glitch'
+
+branding:
+  icon: 'shield'
+  color: 'green'
+
+inputs:
+  mode:
+    description: 'Audit mode: cisa-kev-scan | domain-attack-surface | vendor-kyb-sanctions | gov-tenders-radar'
+    required: false
+    default: 'cisa-kev-scan'
+  targets:
+    description: 'Comma-separated targets (CVEs, domains, vendor names/VAT/LEI/CNPJ, or tender keywords), or path to JSON/TXT file.'
+    required: false
+    default: 'CVE-2024-3094,CVE-2023-4966'
+  rapidapi_key:
+    description: 'RapidAPI Key (@b2bquantapis — BASIC Free 15/mo or PRO $19/mo) for full cloud enrichment.'
+    required: false
+    default: ''
+  zyla_api_key:
+    description: 'Zyla API Hub Key for enterprise synchronous cloud execution.'
+    required: false
+    default: ''
+  zyla_endpoint_url:
+    description: 'Optional Zyla Hub endpoint URL override when authenticating via zyla_api_key.'
+    required: false
+    default: ''
+  apify_token:
+    description: 'Apify API Token (@b2b-quant-apis Pay-Per-Event) for direct cloud dataset execution.'
+    required: false
+    default: ''
+  max_results:
+    description: 'Maximum records to analyze per run (1 to 100).'
+    required: false
+    default: '10'
+  fail_on_high_risk:
+    description: 'Exit with non-zero code (1) if high-risk CVEs, sanctions hits, or critical SSL issues are detected.'
+    required: false
+    default: 'false'
+
+outputs:
+  status:
+    description: 'Execution status (completed_cloud | completed_preview | failed_gate)'
+    value: ${{ steps.b2b_gate.outputs.status }}
+  provider_used:
+    description: 'Billing/execution rail used (rapidapi | zyla | apify | zero-key-preview)'
+    value: ${{ steps.b2b_gate.outputs.provider_used }}
+  records_analyzed:
+    description: 'Total records audited in this workflow run'
+    value: ${{ steps.b2b_gate.outputs.records_analyzed }}
+  high_risk_count:
+    description: 'Count of high-risk or critical findings flagged'
+    value: ${{ steps.b2b_gate.outputs.high_risk_count }}
+  report_json_path:
+    description: 'Path to the structured JSON compliance report generated on the runner'
+    value: ${{ steps.b2b_gate.outputs.report_json_path }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Run B2B Compliance & Security Gate
+      id: b2b_gate
+      shell: bash
+      env:
+        INPUT_MODE: ${{ inputs.mode }}
+        INPUT_TARGETS: ${{ inputs.targets }}
+        INPUT_RAPIDAPI_KEY: ${{ inputs.rapidapi_key }}
+        INPUT_ZYLA_API_KEY: ${{ inputs.zyla_api_key }}
+        INPUT_ZYLA_ENDPOINT_URL: ${{ inputs.zyla_endpoint_url }}
+        INPUT_APIFY_TOKEN: ${{ inputs.apify_token }}
+        INPUT_MAX_RESULTS: ${{ inputs.max_results }}
+        INPUT_FAIL_ON_HIGH_RISK: ${{ inputs.fail_on_high_risk }}
+      run: |
+        python3 "${{ github.action_path }}/src/runner.py"

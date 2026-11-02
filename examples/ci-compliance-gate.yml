@@ -1,0 +1,37 @@
+name: CI Self-Test (All 4 Compliance Modes)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  self-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test Mode 1 - CISA KEV Scan
+        id: kev
+        uses: ./
+        with:
+          mode: 'cisa-kev-scan'
+          targets: 'CVE-2024-3094,CVE-2099-0001'
+
+      - name: Test Mode 2 - Domain Attack Surface
+        uses: ./
+        with:
+          mode: 'domain-attack-surface'
+          targets: 'github.com,modelcontextprotocol.io'
+
+      - name: Test Mode 3 - Vendor KYB Sanctions
+        uses: ./
+        with:
+          mode: 'vendor-kyb-sanctions'
+          targets: 'Example Corp Ltd'
+
+      - name: Test Mode 4 - Gov Tenders Radar
+        uses: ./
+        with:
+          mode: 'gov-tenders-radar'
+          targets: 'cybersecurity,cloud'
