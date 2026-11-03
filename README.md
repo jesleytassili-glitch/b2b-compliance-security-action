@@ -1,7 +1,7 @@
 # 🛡️ B2B Cyber CVE, Sanctions & KYB Compliance Gate (`GitHub Action`)
 
-[![Marketplace Release](https://img.shields.io/github/v/release/jesleytassili-glitch/b2b-compliance-security-action?color=brightgreen&label=Marketplace%20Release)](https://github.com/jesleytassili-glitch/b2b-compliance-security-action/releases/tag/v1.0.0)
-[![Model Context Protocol Registry](https://img.shields.io/badge/Official_MCP_Registry-io.github.jesleytassili-glitch-6366F1)](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.jesleytassili-glitch)
+[![Marketplace Release](https://img.shields.io/github/v/release/jesleytassili-glitch/b2b-compliance-security-action?color=brightgreen&label=Marketplace%20Release)](https://github.com/jesleytassili-glitch/b2b-compliance-security-action/releases/tag/v1.0.1)
+[![Model Context Protocol Registry](https://img.shields.io/badge/Official_MCP_Registry-io.github.jesleytassili--glitch-6366F1)](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.jesleytassili-glitch)
 [![RapidAPI Hub](https://img.shields.io/badge/RapidAPI-@b2bquantapis-0055FF)](https://rapidapi.com/user/b2bquantapis)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
@@ -63,3 +63,8 @@ jobs:
 2. `domain-attack-surface` — Certificate Transparency (`crt.sh`) Shadow-IT subdomains & SSL hygiene (`b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor`).
 3. `vendor-kyb-sanctions` — Consolidated OFAC, UN, EU & PEP sanctions screening (`global-sanctions-pep-interpol-watchlist-screener`).
 4. `gov-tenders-radar` — Live B2G public procurement monitoring (`us-sam-gov-federal-procurement-auditor`).
+
+## 📦 Programmatic SDKs & Local MCP Server
+
+- **Python SDK (PyPI):** `pip install b2b-compliance-sdk`
+- **Node.js / Claude / Cursor MCP (`stdio`):** `npx -y b2b-compliance-mcp-cli`
