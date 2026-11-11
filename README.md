@@ -72,12 +72,13 @@ jobs:
 <!-- PSEO_DOCS_PORTAL_V48 -->
 ## 📚 Live Documentation & API Reference (pSEO Portal v4.8)
 
-Official developer documentation, interactive OpenAPI specifications, and ready-to-use SDK code samples:
+Official developer documentation, interactive OpenAPI 3.0.3 specifications, and ready-to-use SDK code samples:
 
 - 🌐 **[Central API Documentation Portal](https://jesleytassili-glitch.github.io/docs/index.html)** — Directory of 31 institutional REST & MCP endpoints.
-- 📑 **[Agent-Friendly Index (Markdown)](https://jesleytassili-glitch.github.io/docs/index.md)** — Optimized for AI Agents, Claude Code & AutoGPT.
-- 🚀 **[Enterprise Software Supply Chain CVE & EOL Gate](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-enterprise-supply-chain-cve-risk.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-enterprise-supply-chain-cve-risk.md))
-- 🚀 **[OFAC PEP & Global Sanctions Watchdog](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-ofac-sanctions-aml-pep.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/b2b-quant-apis-ofac-sanctions-aml-pep.md))
+- 🤖 **[LLM & AI Agent Discovery (`llms.txt`)](https://jesleytassili-glitch.github.io/llms.txt)** — Structured GEO index for Claude Code, Cursor & Autonomous Agents.
+- 🚀 **[CISA KEV Ransomware Vulnerability Auditor API](https://jesleytassili-glitch.github.io/docs/cisa-kev-ransomware-vulnerability-auditor.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/cisa-kev-ransomware-vulnerability-auditor.md))
+- 🚀 **[OFAC, PEP & Global Sanctions Watchdog API](https://jesleytassili-glitch.github.io/docs/global-sanctions-pep-interpol-watchlist-screener.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/global-sanctions-pep-interpol-watchlist-screener.md))
+- 🚀 **[SSL/TLS CT Log Attack Surface Auditor API](https://jesleytassili-glitch.github.io/docs/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.html)** — Interactive Schema & Code Snippets ([Markdown](https://jesleytassili-glitch.github.io/docs/b2b-ssl-tls-ct-log-subdomain-attack-surface-auditor.md))
 
 *High-availability SLA hosted on GitHub Pages with enterprise distribution across RapidAPI, Zyla API Hub, and Apify Store.*
 <!-- /PSEO_DOCS_PORTAL_V48 -->
